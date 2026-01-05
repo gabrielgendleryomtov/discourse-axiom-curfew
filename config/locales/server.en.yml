@@ -1,0 +1,10 @@
+en:
+  site_settings:
+    axiom_curfew_enabled: "Enable Axiom curfew"
+    axiom_curfew_groups: "Groups subject to curfew"
+    axiom_curfew_timezone: "Curfew timezone (IANA name, e.g. Europe/London)"
+    axiom_curfew_weekday_start: "Weekday curfew start time (HH:MM, 24-hour; you may use 24:00)"
+    axiom_curfew_weekday_end: "Weekday curfew end time (HH:MM, 24-hour; you may use 24:00)"
+    axiom_curfew_weekend_start: "Weekend curfew start time (HH:MM, 24-hour; you may use 24:00)"
+    axiom_curfew_weekend_end: "Weekend curfew end time (HH:MM, 24-hour; you may use 24:00"
+    axiom_curfew_message: "Curfew message shown when posting is blocked (curfew is disabled if start time equals end time)"

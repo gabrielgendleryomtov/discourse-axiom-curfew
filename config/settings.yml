@@ -1,0 +1,39 @@
+plugins:
+  axiom_curfew_enabled:
+    default: false
+    client: false
+
+  axiom_curfew_groups:
+    default: ""
+    type: group_list
+    client: false
+
+  axiom_curfew_timezone:
+    default: "Europe/London"
+    type: string
+    client: false
+
+  axiom_curfew_weekday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_weekday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_weekend_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_weekend_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_message:
+    default: "Posting is closed for pupils during curfew hours. You can still read and return later."
+    type: string
+    client: false
