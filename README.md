@@ -9,7 +9,7 @@ When the curfew is active:
 - Users in the configured curfew groups **cannot create topics or replies**
 - Users can still **read** the forum normally
 - Staff (admins/moderators) are **always exempt** and can post anywhere at any time
-- Curfew schedule supports different times for **weekdays vs weekends**
+- Curfew schedule supports different start/end times for **each day of the week**
 - Curfew uses a configurable timezone (default: `Europe/London`)
 
 ## Configuration
@@ -19,14 +19,14 @@ Admin → Settings → Plugins → Axiom Curfew
 - Enable Axiom curfew
 - Groups subject to curfew
 - Curfew timezone (e.g. `Europe/London`)
-- Weekday start/end (`HH:MM`)
-- Weekend start/end (`HH:MM`)
+- Monday–Sunday start/end (`HH:MM`)
 - Message shown to users when posting is blocked
 
 ### Example schedules
 
-Weekdays: `21:00` → `07:00`  
-Weekends: `21:00` → `07:00`
+Mon–Thu: `21:00` → `07:00`  
+Fri–Sat: `22:30` → `08:30`  
+Sun: `21:00` → `07:00`
 
 Full-day curfew: `00:00` → `24:00`  
 No curfew: set start and end equal (e.g. `21:00` → `21:00`)
@@ -45,4 +45,4 @@ Curfew start/end times are configured as `HH:MM` (24-hour clock).
 
 - Curfew applies site-wide (no category exceptions in this version).
 - This is intentional to keep policy simple and consistent.
-- Future enhancement: exception categories or per-day schedules.
+- Future enhancement: exception categories.

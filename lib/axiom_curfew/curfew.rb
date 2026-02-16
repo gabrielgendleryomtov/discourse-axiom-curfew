@@ -30,19 +30,23 @@ module ::AxiomCurfew
       tz
     end
 
+    DAY_NAMES = {
+      0 => "sunday",
+      1 => "monday",
+      2 => "tuesday",
+      3 => "wednesday",
+      4 => "thursday",
+      5 => "friday",
+      6 => "saturday"
+    }.freeze
+
     def self.schedule_for(time)
       # time is already in the plugin timezone
-      if weekend?(time)
-        { start: SiteSetting.axiom_curfew_weekend_start, end: SiteSetting.axiom_curfew_weekend_end }
-      else
-        { start: SiteSetting.axiom_curfew_weekday_start, end: SiteSetting.axiom_curfew_weekday_end }
-      end
-    end
-
-    def self.weekend?(time)
-      # In Ruby: 0 = Sunday, 6 = Saturday
-      wday = time.wday
-      wday == 0 || wday == 6
+      day_name = DAY_NAMES[time.wday]
+      {
+        start: SiteSetting.public_send("axiom_curfew_#{day_name}_start"),
+        end: SiteSetting.public_send("axiom_curfew_#{day_name}_end")
+      }
     end
 
     def self.parse_time_to_minutes(str)
