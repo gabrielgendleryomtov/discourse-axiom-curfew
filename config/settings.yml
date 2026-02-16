@@ -13,22 +13,72 @@ plugins:
     type: string
     client: false
 
-  axiom_curfew_weekday_start:
+  axiom_curfew_monday_start:
     default: "21:00"
     type: string
     client: false
 
-  axiom_curfew_weekday_end:
+  axiom_curfew_monday_end:
     default: "07:00"
     type: string
     client: false
 
-  axiom_curfew_weekend_start:
+  axiom_curfew_tuesday_start:
     default: "21:00"
     type: string
     client: false
 
-  axiom_curfew_weekend_end:
+  axiom_curfew_tuesday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_wednesday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_wednesday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_thursday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_thursday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_friday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_friday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_saturday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_saturday_end:
+    default: "07:00"
+    type: string
+    client: false
+
+  axiom_curfew_sunday_start:
+    default: "21:00"
+    type: string
+    client: false
+
+  axiom_curfew_sunday_end:
     default: "07:00"
     type: string
     client: false
