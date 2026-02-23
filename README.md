@@ -7,6 +7,7 @@ A Discourse plugin that applies a **posting curfew** to specified user groups, w
 When the curfew is active:
 
 - Users in the configured curfew groups **cannot create topics or replies**
+- Users in the configured curfew groups **cannot send chat messages**
 - Users can still **read** the forum normally
 - Staff (admins/moderators) are **always exempt** and can post anywhere at any time
 - Curfew schedule supports different start/end times for **each day of the week**

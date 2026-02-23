@@ -16,7 +16,14 @@ after_initialize do
   require_relative "lib/axiom_curfew/curfew"
   require_relative "lib/axiom_curfew/guardian_extension"
   require_relative "lib/axiom_curfew/post_creator_extension"
+  require_relative "lib/axiom_curfew/chat_message_creation_policy_extension"
 
   PostCreator.prepend(::AxiomCurfew::PostCreatorExtension)
   Guardian.prepend(::AxiomCurfew::GuardianExtension)
+
+  if defined?(::Chat::Channel::Policy::MessageCreation)
+    ::Chat::Channel::Policy::MessageCreation.prepend(
+      ::AxiomCurfew::ChatMessageCreationPolicyExtension,
+    )
+  end
 end

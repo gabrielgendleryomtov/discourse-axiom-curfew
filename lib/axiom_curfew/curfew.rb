@@ -14,7 +14,7 @@ module ::AxiomCurfew
       schedule = schedule_for(now)
 
       start_min = parse_time_to_minutes(schedule[:start])
-      end_min   = parse_time_to_minutes(schedule[:end])
+      end_min = parse_time_to_minutes(schedule[:end])
 
       return false if start_min.nil? || end_min.nil?
 
@@ -37,7 +37,7 @@ module ::AxiomCurfew
       3 => "wednesday",
       4 => "thursday",
       5 => "friday",
-      6 => "saturday"
+      6 => "saturday",
     }.freeze
 
     def self.schedule_for(time)
@@ -45,7 +45,7 @@ module ::AxiomCurfew
       day_name = DAY_NAMES[time.wday]
       {
         start: SiteSetting.public_send("axiom_curfew_#{day_name}_start"),
-        end: SiteSetting.public_send("axiom_curfew_#{day_name}_end")
+        end: SiteSetting.public_send("axiom_curfew_#{day_name}_end"),
       }
     end
 
@@ -63,7 +63,7 @@ module ::AxiomCurfew
     # Example overnight: start=21:00 (1260), end=07:00 (420)
     def self.in_window?(current, start_min, end_min)
       return false if start_min == end_min # start=end disables curfew for that schedule
-      
+
       if start_min < end_min
         # Same-day window
         current >= start_min && current < end_min
@@ -76,12 +76,7 @@ module ::AxiomCurfew
     # same across two plugins -- consider refactoring
 
     def self.group_ids_from_setting(setting_value)
-      setting_value
-        .to_s
-        .split("|")
-        .map(&:to_i)
-        .reject(&:zero?)
-        .uniq
+      setting_value.to_s.split("|").map(&:to_i).reject(&:zero?).uniq
     end
 
     def self.user_in_groups?(user, group_ids)
